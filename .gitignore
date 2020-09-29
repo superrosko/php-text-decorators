@@ -1,0 +1,8 @@
+# Dependency directories
+/vendor
+
+# IDE
+.idea
+
+# Tmp files
+.php_cs.cache
