@@ -1,0 +1,45 @@
+{
+    "name": "superrosko/php-text-decorators",
+    "description": "Collection of php text decorators",
+    "homepage": "https://github.com/superrosko/php-text-decorators",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Dmitriy Bespalov",
+            "email": "dbespalov.rosko@gmail.com",
+            "homepage": "https://rdevelab.ru",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "text",
+        "decorators"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Superrosko\\PhpTextDecorators\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "codeception/codeception": "^4.1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "scripts": {
+        "check-style": "php-cs-fixer fix --dry-run --diff",
+        "fix-style": "php-cs-fixer fix"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
