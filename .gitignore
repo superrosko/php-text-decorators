@@ -4,5 +4,6 @@
 # IDE
 .idea
 
-# Tmp files
+# Tmp and env files
 .php_cs.cache
+.env
