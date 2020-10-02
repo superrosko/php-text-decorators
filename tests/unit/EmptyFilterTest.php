@@ -15,6 +15,10 @@ class EmptyFilterTest extends Unit
      * @var EmptyFilter
      */
     public EmptyFilter $filter;
+
+    /**
+     * @var Generator
+     */
     public Generator $fakerFactory;
 
     protected function _before()
