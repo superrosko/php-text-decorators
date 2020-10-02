@@ -24,6 +24,30 @@ class UnitTester extends Actor
     use _generated\UnitTesterActions;
 
     /**
-     * Define custom actions here.
+     * @param  string  $className
+     * @param  string  $propertyName
+     * @param  object  $stub
+     * @return mixed
+     * @throws ReflectionException
      */
+    public function getPrivatePropertyValue(string $className, string $propertyName, object $stub)
+    {
+        $reflector = new ReflectionClass($className);
+        $property = $reflector->getProperty($propertyName);
+        $property->setAccessible(true);
+
+        return $property->getValue($stub);
+    }
+
+    /**
+     * @param  mixed  $expected
+     * @param  string  $className
+     * @param  string  $propertyName
+     * @param  object  $stub
+     * @throws ReflectionException
+     */
+    public function assertPrivatePropertyValue($expected, string $className, string $propertyName, object $stub)
+    {
+        $this->assertEquals($expected, $this->getPrivatePropertyValue($className, $propertyName, $stub));
+    }
 }
