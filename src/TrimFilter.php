@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Superrosko\PhpTextDecorators;
 
-final class TrimFilter extends TextDecorator
+final class TrimFilter implements TextDecoratorInterface
 {
     /**
      * @var string

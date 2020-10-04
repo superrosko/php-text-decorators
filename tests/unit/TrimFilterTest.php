@@ -8,7 +8,6 @@ use Codeception\Test\Unit;
 use Faker\Factory;
 use Faker\Generator;
 use ReflectionException;
-use Superrosko\PhpTextDecorators\EmptyFilter;
 use Superrosko\PhpTextDecorators\TrimFilter;
 use UnitTester;
 
@@ -31,8 +30,7 @@ class TrimFilterTest extends Unit
 
     protected function _before()
     {
-        $filter = new EmptyFilter();
-        $this->filter = new TrimFilter($filter);
+        $this->filter = new TrimFilter();
         $this->fakerFactory = Factory::create();
     }
 
