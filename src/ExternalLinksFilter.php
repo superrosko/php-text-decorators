@@ -35,15 +35,6 @@ final class ExternalLinksFilter extends TextDecorator
     private string $optionsTarget = '_blank';
 
     /**
-     * ExternalLinksFilter constructor.
-     * @param  TextDecoratorInterface  $textDecorator
-     */
-    public function __construct(TextDecoratorInterface $textDecorator)
-    {
-        parent::__construct($textDecorator);
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function format(string $text): string
