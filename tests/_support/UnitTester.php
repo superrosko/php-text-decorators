@@ -18,6 +18,7 @@ use Codeception\Actor;
  * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
+ * @psalm-suppress UndefinedTrait
  */
 class UnitTester extends Actor
 {
