@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="3.16@d03e5ef057d6adc656c0ff7e166c50b73b4f48f3">
+  <file src="tests/_support/UnitTester.php">
+    <UndefinedTrait occurrences="1">
+      <code>_generated\UnitTesterActions</code>
+    </UndefinedTrait>
+  </file>
+</files>
