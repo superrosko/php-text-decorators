@@ -28,6 +28,9 @@ class TextDecoratorTest extends Unit
      */
     public MockObject $stub;
 
+    /**
+     * @return void
+     */
     protected function _before()
     {
         $this->stub = $this->createMock(TextDecoratorInterface::class);
@@ -35,7 +38,7 @@ class TextDecoratorTest extends Unit
         $this->fakerFactory = Factory::create();
     }
 
-    public function testText()
+    public function testText(): void
     {
         $text = $this->fakerFactory->text;
         $this->stub->method('format')

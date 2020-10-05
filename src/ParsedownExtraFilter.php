@@ -27,7 +27,7 @@ final class ParsedownExtraFilter extends TextDecorator
     {
         $text = parent::format($text);
 
-        return $this->parsedownExtra->text($text);
+        return (string) $this->parsedownExtra->text($text);
     }
 
     /**

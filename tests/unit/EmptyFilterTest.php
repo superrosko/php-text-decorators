@@ -21,13 +21,16 @@ class EmptyFilterTest extends Unit
      */
     public Generator $fakerFactory;
 
+    /**
+     * @return void
+     */
     protected function _before()
     {
         $this->filter = new EmptyFilter();
         $this->fakerFactory = Factory::create();
     }
 
-    public function testText()
+    public function testText(): void
     {
         $text = $this->fakerFactory->text;
         $this->assertEquals($text, $this->filter->format($text));

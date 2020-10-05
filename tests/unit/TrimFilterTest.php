@@ -28,19 +28,22 @@ class TrimFilterTest extends Unit
      */
     public Generator $fakerFactory;
 
+    /**
+     * @return void
+     */
     protected function _before()
     {
         $this->filter = new TrimFilter();
         $this->fakerFactory = Factory::create();
     }
 
-    public function testText()
+    public function testText(): void
     {
         $text = trim($this->fakerFactory->text);
         $this->assertEquals($text, $this->filter->format($text));
     }
 
-    public function testTextWithExcludedChars()
+    public function testTextWithExcludedChars(): void
     {
         $text = " \t\n\r\0\x0B".$this->fakerFactory->text." \t\n\r\0\x0B";
         $this->assertEquals(trim($text), $this->filter->format($text));
@@ -51,8 +54,10 @@ class TrimFilterTest extends Unit
 
     /**
      * @throws ReflectionException
+     *
+     * @return void
      */
-    public function testSetCharList()
+    public function testSetCharList(): void
     {
         $this->filter->setCharList('_');
         $this->tester->assertPrivatePropertyValue(

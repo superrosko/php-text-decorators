@@ -30,6 +30,9 @@ class ExternalLinksFilterTest extends Unit
      */
     public Generator $fakerFactory;
 
+    /**
+     * @return void
+     */
     protected function _before()
     {
         $filter = new EmptyFilter();
@@ -37,13 +40,13 @@ class ExternalLinksFilterTest extends Unit
         $this->fakerFactory = Factory::create();
     }
 
-    public function testText()
+    public function testText(): void
     {
         $text = $this->fakerFactory->text;
         $this->assertEquals($text, $this->filter->format($text));
     }
 
-    public function testTextWithInternalLinks()
+    public function testTextWithInternalLinks(): void
     {
         $text = $this->fakerFactory->text;
         $text .= ' <a href="http://example.com">test link</a> ';
@@ -69,7 +72,7 @@ class ExternalLinksFilterTest extends Unit
         $this->assertEquals($text, $this->filter->format($text));
     }
 
-    public function testCloseExternalLinks()
+    public function testCloseExternalLinks(): void
     {
         $text = $this->fakerFactory->text;
         $this->assertEquals(
@@ -96,7 +99,7 @@ class ExternalLinksFilterTest extends Unit
         );
     }
 
-    public function testPrepareLink()
+    public function testPrepareLink(): void
     {
         $this->assertEquals(
             '<a href="https://example.com" target="_blank" rel="nofollow noreferrer">',
@@ -157,7 +160,7 @@ class ExternalLinksFilterTest extends Unit
         );
     }
 
-    public function testPrepareAttr()
+    public function testPrepareAttr(): void
     {
         $this->assertEquals(
             '<a href="https://example.com">',
@@ -254,7 +257,7 @@ class ExternalLinksFilterTest extends Unit
             );
     }
 
-    public function testGetAttr()
+    public function testGetAttr(): void
     {
         $this->assertEquals('', $this->filter->getAttr('test'));
 
@@ -321,7 +324,7 @@ class ExternalLinksFilterTest extends Unit
         );
     }
 
-    public function testGetRel()
+    public function testGetRel(): void
     {
         $this->assertEquals('rel="nofollow noreferrer"', $this->filter->getRel());
         $this->assertEquals('', $this->filter->setRel([])->getRel());
@@ -338,7 +341,7 @@ class ExternalLinksFilterTest extends Unit
         $this->assertEquals('rel=\'gallery nofollow\'', $this->filter->setRel([])->getRel('nofollow gallery', '\''));
     }
 
-    public function testGetTarget()
+    public function testGetTarget(): void
     {
         $this->assertEquals('target="_blank"', $this->filter->getTarget());
         $this->assertEquals('', $this->filter->setTarget('')->getTarget());
@@ -350,7 +353,7 @@ class ExternalLinksFilterTest extends Unit
         $this->assertEquals('target=\'_blank\'', $this->filter->setTarget('_blank')->getTarget('_self', '\''));
     }
 
-    public function testIsExternalLink()
+    public function testIsExternalLink(): void
     {
         $this->filter->setExcludedHosts([
             'example.com',
@@ -380,8 +383,10 @@ class ExternalLinksFilterTest extends Unit
 
     /**
      * @throws ReflectionException
+     *
+     * @return void
      */
-    public function testSetExcludedHosts()
+    public function testSetExcludedHosts(): void
     {
         $this->filter->setExcludedHosts(['example.com']);
         $this->tester->assertPrivatePropertyValue(
@@ -410,8 +415,10 @@ class ExternalLinksFilterTest extends Unit
 
     /**
      * @throws ReflectionException
+     *
+     * @return void
      */
-    public function testSetRel()
+    public function testSetRel(): void
     {
         $this->filter->setRel(['test']);
         $this->tester->assertPrivatePropertyValue(
@@ -440,8 +447,10 @@ class ExternalLinksFilterTest extends Unit
 
     /**
      * @throws ReflectionException
+     *
+     * @return void
      */
-    public function testSetTarget()
+    public function testSetTarget(): void
     {
         $this->filter->setTarget('_blank');
         $this->tester->assertPrivatePropertyValue(

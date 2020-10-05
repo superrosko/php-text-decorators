@@ -22,6 +22,9 @@ class ParsedownExtraFilterTest extends Unit
      */
     public Generator $fakerFactory;
 
+    /**
+     * @return void
+     */
     protected function _before()
     {
         $filter = new EmptyFilter();
@@ -29,13 +32,13 @@ class ParsedownExtraFilterTest extends Unit
         $this->fakerFactory = Factory::create();
     }
 
-    public function testText()
+    public function testText(): void
     {
         $text = $this->fakerFactory->text;
         $this->assertEquals('<p>'.$text.'</p>', $this->filter->format($text));
     }
 
-    public function testImage()
+    public function testImage(): void
     {
         $text = '![Image](https://example.com/test.jpg) {.test-class}';
         $this->assertEquals(
@@ -44,7 +47,7 @@ class ParsedownExtraFilterTest extends Unit
         );
     }
 
-    public function testLink()
+    public function testLink(): void
     {
         $text = '[Link](https://example.com/test/) {.test-class}';
         $this->assertEquals(
@@ -53,19 +56,19 @@ class ParsedownExtraFilterTest extends Unit
         );
     }
 
-    public function testHeader()
+    public function testHeader(): void
     {
         $text = '# Header {#anchor-header}';
         $this->assertEquals('<h1 id="anchor-header">Header</h1>', $this->filter->format($text));
     }
 
-    public function testCode()
+    public function testCode(): void
     {
         $text = '```<?php phpinfo(); ?>```';
         $this->assertEquals('<p><code>&lt;?php phpinfo(); ?&gt;</code></p>', $this->filter->format($text));
     }
 
-    public function testSetBreaksEnabled()
+    public function testSetBreaksEnabled(): void
     {
         $text = "1st line \n 2nd line";
         $this->assertEquals(
@@ -75,7 +78,7 @@ class ParsedownExtraFilterTest extends Unit
         $this->assertEquals("<p>1st line\n2nd line</p>", $this->filter->setBreaksEnabled(false)->format($text));
     }
 
-    public function testSetMarkupEscaped()
+    public function testSetMarkupEscaped(): void
     {
         $text = '<div>*test*</div>';
         $this->assertEquals(
@@ -85,7 +88,7 @@ class ParsedownExtraFilterTest extends Unit
         $this->assertEquals('<div>*test*</div>', $this->filter->setMarkupEscaped(false)->format($text));
     }
 
-    public function testSetSafeMode()
+    public function testSetSafeMode(): void
     {
         $text = '<script>alert("xss");</script>';
         $this->assertEquals(
@@ -95,7 +98,7 @@ class ParsedownExtraFilterTest extends Unit
         $this->assertEquals('<script>alert("xss");</script>', $this->filter->setSafeMode(false)->format($text));
     }
 
-    public function testSetUrlsLinked()
+    public function testSetUrlsLinked(): void
     {
         $text = 'https://example.com/test/';
         $this->assertEquals(

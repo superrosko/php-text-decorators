@@ -52,11 +52,11 @@ final class ExternalLinksFilter extends TextDecorator
     {
         $result = preg_replace_callback(
             '~(?<full_tag><a(?:.*?)(?<href>href\s*?=\s*?(?<quote>["\'])(?<url>.+?)\k<quote>)(?:.*?)?\s*?>)~iu',
-            fn ($matches) => $this->prepareLink(
-                $matches['full_tag'],
-                $matches['href'],
-                $matches['url'],
-                $matches['quote']
+            fn (array $matches) => $this->prepareLink(
+                (string) $matches['full_tag'],
+                (string) $matches['href'],
+                (string) $matches['url'],
+                (string) $matches['quote']
             ),
             $text
         );
@@ -176,7 +176,7 @@ final class ExternalLinksFilter extends TextDecorator
     }
 
     /**
-     * @param  array  $optionsExcludedHosts
+     * @param  string[]  $optionsExcludedHosts
      * @return ExternalLinksFilter
      */
     public function setExcludedHosts(array $optionsExcludedHosts = []): ExternalLinksFilter
