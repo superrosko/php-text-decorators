@@ -13,7 +13,7 @@ Collection of php text decorators.
 
 ## Requirements
 
-- PHP >= 7.3
+- PHP >= 7.4
 
 Install the latest version with
 
