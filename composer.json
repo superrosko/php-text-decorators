@@ -3,7 +3,7 @@
     "description": "Collection of php text decorators",
     "homepage": "https://github.com/superrosko/php-text-decorators",
     "license": "MIT",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "authors": [
         {
             "name": "Dmitriy Bespalov",
@@ -23,7 +23,8 @@
     },
     "require": {
         "php": "^7.4",
-        "erusev/parsedown-extra": "^0.8.1"
+        "erusev/parsedown-extra": "^0.8.1",
+        "scrivo/highlight.php": "v9.18.1.2"
     },
     "require-dev": {
         "codeception/codeception": "^4.1",
@@ -42,7 +43,10 @@
         "check-style": "php-cs-fixer fix --dry-run --diff",
         "fix-style": "php-cs-fixer fix",
         "static-analysis": "psalm --shepherd --stats",
-        "test": "codecept run"
+        "test": "codecept run",
+        "coverage-html": "codecept run --coverage --coverage-html",
+        "coverage-xml": "codecept run --coverage --coverage-xml",
+        "codecov-push": "bash -c \"bash <(curl -s https://codecov.io/bash)\""
     },
     "config": {
         "sort-packages": true
