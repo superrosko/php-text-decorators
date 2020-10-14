@@ -372,6 +372,7 @@ class ExternalLinksFilterTest extends Unit
             'example.com',
             'xn--e1afmkfd.xn--p1ai',
             'пример.рф',
+            '127.0.0.1',
         ]);
 
         $this->assertFalse($this->filter->isExternalLink('http://example.com'));
@@ -380,6 +381,12 @@ class ExternalLinksFilterTest extends Unit
         $this->assertFalse($this->filter->isExternalLink('http://example.com/test?param=test#hash'));
         $this->assertFalse($this->filter->isExternalLink('http://xn--e1afmkfd.xn--p1ai/test?param=test#hash'));
         $this->assertFalse($this->filter->isExternalLink('http://пример.рф/test?param=test#hash'));
+        $this->assertFalse($this->filter->isExternalLink('test'));
+        $this->assertFalse($this->filter->isExternalLink('/test'));
+        $this->assertFalse($this->filter->isExternalLink('#test'));
+        $this->assertFalse($this->filter->isExternalLink('/test?param=test#hash'));
+        $this->assertFalse($this->filter->isExternalLink('http://127.0.0.1'));
+        $this->assertFalse($this->filter->isExternalLink('http://127.0.0.1:8080'));
 
         $this->assertTrue($this->filter->isExternalLink('http://example.net'));
         $this->assertTrue($this->filter->isExternalLink('http://example.net/test?param=test#hash'));
@@ -392,6 +399,8 @@ class ExternalLinksFilterTest extends Unit
         $this->assertTrue($this->filter->isExternalLink('http://example.com/test?param=test#hash'));
         $this->assertTrue($this->filter->isExternalLink('http://xn--e1afmkfd.xn--p1ai/test?param=test#hash'));
         $this->assertTrue($this->filter->isExternalLink('http://пример.рф/test?param=test#hash'));
+        $this->assertTrue($this->filter->isExternalLink('http://127.0.0.1'));
+        $this->assertTrue($this->filter->isExternalLink('http://127.0.0.1:8080'));
     }
 
     /**
