@@ -7,15 +7,16 @@ namespace unit;
 use Codeception\Test\Unit;
 use Faker\Factory;
 use Faker\Generator;
+use ParsedownExtra;
 use Superrosko\PhpTextDecorators\EmptyFilter;
-use Superrosko\PhpTextDecorators\ParsedownExtraFilter;
+use Superrosko\PhpTextDecorators\ParsedownFilter;
 
-class ParsedownExtraFilterTest extends Unit
+class ParsedownFilterTest extends Unit
 {
     /**
-     * @var ParsedownExtraFilter
+     * @var ParsedownFilter
      */
-    public ParsedownExtraFilter $filter;
+    public ParsedownFilter $filter;
 
     /**
      * @var Generator
@@ -28,7 +29,8 @@ class ParsedownExtraFilterTest extends Unit
     protected function _before()
     {
         $filter = new EmptyFilter();
-        $this->filter = new ParsedownExtraFilter($filter);
+        $parsedown = new ParsedownExtra();
+        $this->filter = new ParsedownFilter($filter, $parsedown);
         $this->fakerFactory = Factory::create();
     }
 
