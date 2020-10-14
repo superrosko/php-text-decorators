@@ -63,11 +63,24 @@ class ExternalLinksFilterTest extends Unit
         $text .= $this->fakerFactory->text;
         $text .= ' <a href="http://пример.рф/test?param=test#hash" class="test-class" rel="nofollow gallery" target="_self">test link</a> ';
         $text .= $this->fakerFactory->text;
+        $text .= ' <a href="test">test link</a> ';
+        $text .= $this->fakerFactory->text;
+        $text .= ' <a href="/test">test link</a> ';
+        $text .= $this->fakerFactory->text;
+        $text .= ' <a href="#test">test link</a> ';
+        $text .= $this->fakerFactory->text;
+        $text .= ' <a href="/test?param=test#hash">test link</a> ';
+        $text .= $this->fakerFactory->text;
+        $text .= ' <a href="http://127.0.0.1">test link</a> ';
+        $text .= $this->fakerFactory->text;
+        $text .= ' <a href="http://127.0.0.1:8080">test link</a> ';
+        $text .= $this->fakerFactory->text;
 
         $this->filter->setExcludedHosts([
             'example.com',
             'xn--e1afmkfd.xn--p1ai',
             'пример.рф',
+            '127.0.0.1',
         ]);
         $this->assertEquals($text, $this->filter->format($text));
     }
@@ -382,9 +395,8 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @throws ReflectionException
-     *
      * @return void
+     * @throws ReflectionException
      */
     public function testSetExcludedHosts(): void
     {
@@ -414,9 +426,8 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @throws ReflectionException
-     *
      * @return void
+     * @throws ReflectionException
      */
     public function testSetRel(): void
     {
@@ -446,9 +457,8 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @throws ReflectionException
-     *
      * @return void
+     * @throws ReflectionException
      */
     public function testSetTarget(): void
     {

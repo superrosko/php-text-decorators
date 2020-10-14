@@ -172,7 +172,7 @@ final class ExternalLinksFilter extends TextDecorator
         $parsedUrl = parse_url($url);
         $urlHost = $parsedUrl['host'] ?? null;
 
-        return ! in_array($urlHost, $this->optionsExcludedHosts);
+        return is_null($urlHost) ? false : ! in_array($urlHost, $this->optionsExcludedHosts);
     }
 
     /**
