@@ -58,6 +58,7 @@ final class HighlighterFilter extends TextDecorator
     {
         $result = '';
         try {
+            $code = htmlspecialchars_decode($code);
             $highlighted = $this->highlighter->highlight($language, $code);
             $result .= '<pre><code class="hljs '.(string) $highlighted->language.'">';
             $result .= (string) $highlighted->value;
