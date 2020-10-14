@@ -11,15 +11,9 @@ use Faker\Generator;
 use Highlight\Highlighter;
 use Superrosko\PhpTextDecorators\EmptyFilter;
 use Superrosko\PhpTextDecorators\HighlighterFilter;
-use UnitTester;
 
 class HighlighterFilterTest extends Unit
 {
-    /**
-     * @var UnitTester
-     */
-    protected UnitTester $tester;
-
     /**
      * @var HighlighterFilter
      */
