@@ -7,3 +7,4 @@
 # Tmp and env files
 .php_cs.cache
 .env
+composer.lock
