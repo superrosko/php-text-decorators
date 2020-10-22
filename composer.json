@@ -3,7 +3,7 @@
     "description": "Collection of php text decorators",
     "homepage": "https://github.com/superrosko/php-text-decorators",
     "license": "MIT",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "authors": [
         {
             "name": "Dmitriy Bespalov",
@@ -23,7 +23,8 @@
     },
     "require": {
         "php": "^7.4",
-        "scrivo/highlight.php": "^v9.18"
+        "scrivo/highlight.php": "^v9.18",
+        "ext-json": "*"
     },
     "require-dev": {
         "codeception/codeception": "^4.1",
