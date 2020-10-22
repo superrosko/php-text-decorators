@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace Superrosko\PhpTextDecorators;
 
-final class JsonPrettyFilter implements TextDecoratorInterface
+final class JsonPrettyFilter extends TextDecorator
 {
     /**
      * {@inheritdoc}
      */
     public function format(string $text): string
     {
-        return json_encode(json_decode($text), JSON_PRETTY_PRINT);
+        $text = parent::format($text);
+
+        return (string) json_encode(json_decode($text), JSON_PRETTY_PRINT);
     }
 }

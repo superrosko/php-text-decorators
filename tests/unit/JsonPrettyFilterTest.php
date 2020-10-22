@@ -7,6 +7,7 @@ namespace unit;
 use Codeception\Test\Unit;
 use Faker\Factory;
 use Faker\Generator;
+use Superrosko\PhpTextDecorators\EmptyFilter;
 use Superrosko\PhpTextDecorators\JsonPrettyFilter;
 use UnitTester;
 
@@ -32,7 +33,8 @@ class JsonPrettyFilterTest extends Unit
      */
     protected function _before()
     {
-        $this->filter = new JsonPrettyFilter();
+        $filter = new EmptyFilter();
+        $this->filter = new JsonPrettyFilter($filter);
         $this->fakerFactory = Factory::create();
     }
 
