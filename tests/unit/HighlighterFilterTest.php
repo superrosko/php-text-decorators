@@ -61,6 +61,19 @@ class HighlighterFilterTest extends Unit
     /**
      * @throws Exception
      */
+    public function testTextWithMultilineCode(): void
+    {
+        $code = '<?php
+        phpinfo(); ?>';
+        $textCode = '<pre><code class="language-php">'.$code.'</code></pre>';
+        $textCodeHighlighted = (string) $this->highlighter->highlight('php', $code)->value;
+
+        $this->assertStringContainsString($textCodeHighlighted, $this->filter->format($textCode));
+    }
+
+    /**
+     * @throws Exception
+     */
     public function testHighlightContent(): void
     {
         $code = '<?php phpinfo(); ?>';

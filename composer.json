@@ -3,7 +3,7 @@
     "description": "Collection of php text decorators",
     "homepage": "https://github.com/superrosko/php-text-decorators",
     "license": "MIT",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "authors": [
         {
             "name": "Dmitriy Bespalov",
