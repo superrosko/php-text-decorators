@@ -74,6 +74,25 @@ class HighlighterFilterTest extends Unit
     /**
      * @throws Exception
      */
+    public function testTextWithMultilineCodeWithoutLang(): void
+    {
+        $text = $this->fakerFactory->text;
+        $codeFirst = '<?php
+        echo "test"; ?>';
+        $codeSecond = '<?php
+        phpinfo(); ?>';
+        $textCode = '<pre><code>'.$codeFirst.'</code></pre>'.$text.'<pre><code class="language-php">'.$codeSecond.'</code></pre>';
+        $textFirstCodeHighlighted = (string) '<pre><code class="hljs">'.htmlentities($codeFirst).'</code></pre>';
+        $textSecondCodeHighlighted = (string) $this->highlighter->highlight('php', $codeSecond)->value;
+        $textCodeFilterHighlighted = (string) $this->filter->format($textCode);
+
+        $this->assertStringContainsString($textFirstCodeHighlighted, $textCodeFilterHighlighted);
+        $this->assertStringContainsString($textSecondCodeHighlighted, $textCodeFilterHighlighted);
+    }
+
+    /**
+     * @throws Exception
+     */
     public function testHighlightContent(): void
     {
         $code = '<?php phpinfo(); ?>';
