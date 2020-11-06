@@ -38,7 +38,7 @@ final class HighlighterFilter extends TextDecorator
     public function highlightContent(string $text): string
     {
         $result = preg_replace_callback(
-            '~<pre>\s*<code(\s*?|.*?class=(?<quote>["\'])language-(?<language>.*?)\k<quote>.*?)>\s*(?<code>.*?)\s*</code>\s*</pre>~ius',
+            '~<pre>\s*<code(\s*?|.*?class=(?<quote>["\'])language-(?<language>.*?)\k<quote>.*?)>(?<code>.*?)</code>\s*</pre>~ius',
             fn (array $matches) => $this->prepareCode(
                 (string) $matches['language'],
                 (string) $matches['code'],
