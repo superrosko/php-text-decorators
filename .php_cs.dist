@@ -153,4 +153,8 @@ return PhpCsFixer\Config::create()
         'unary_operator_spaces' => true,
         'line_ending' => true,
         'whitespace_after_comma_in_array' => true,
-    ]);
+        'declare_strict_types' => true,
+        'yoda_style' => true,
+    ])
+    ->setRiskyAllowed(true);
+
