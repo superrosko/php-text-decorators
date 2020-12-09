@@ -82,9 +82,9 @@ class HighlighterFilterTest extends Unit
         $codeSecond = '<?php
         phpinfo(); ?>';
         $textCode = '<pre><code>'.$codeFirst.'</code></pre>'.$text.'<pre><code class="language-php">'.$codeSecond.'</code></pre>';
-        $textFirstCodeHighlighted = (string) '<pre><code class="hljs">'.htmlentities($codeFirst).'</code></pre>';
+        $textFirstCodeHighlighted = '<pre><code class="hljs">'.htmlentities($codeFirst).'</code></pre>';
         $textSecondCodeHighlighted = (string) $this->highlighter->highlight('php', $codeSecond)->value;
-        $textCodeFilterHighlighted = (string) $this->filter->format($textCode);
+        $textCodeFilterHighlighted = $this->filter->format($textCode);
 
         $this->assertStringContainsString($textFirstCodeHighlighted, $textCodeFilterHighlighted);
         $this->assertStringContainsString($textSecondCodeHighlighted, $textCodeFilterHighlighted);
