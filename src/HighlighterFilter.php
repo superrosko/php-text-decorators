@@ -33,6 +33,7 @@ final class HighlighterFilter extends TextDecorator
 
     /**
      * @param  string  $text
+     *
      * @return string
      */
     public function highlightContent(string $text): string
@@ -52,6 +53,7 @@ final class HighlighterFilter extends TextDecorator
     /**
      * @param  string  $language
      * @param  string  $code
+     *
      * @return string
      */
     public function prepareCode(string $language, string $code): string

@@ -13,6 +13,7 @@ class TextDecorator implements TextDecoratorInterface
 
     /**
      * TextDecorator constructor.
+     *
      * @param  TextDecoratorInterface  $textDecorator
      */
     public function __construct(TextDecoratorInterface $textDecorator)
@@ -22,6 +23,7 @@ class TextDecorator implements TextDecoratorInterface
 
     /**
      * @param  string  $text
+     *
      * @return string
      */
     public function format(string $text): string

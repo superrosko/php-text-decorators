@@ -114,8 +114,9 @@ class LazySizesFilterTest extends Unit
     }
 
     /**
-     * @return void
      * @throws ReflectionException
+     *
+     * @return void
      */
     public function testSetClass(): void
     {

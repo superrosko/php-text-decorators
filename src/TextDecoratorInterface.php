@@ -8,6 +8,7 @@ interface TextDecoratorInterface
 {
     /**
      * @param  string  $text
+     *
      * @return string
      */
     public function format(string $text): string;

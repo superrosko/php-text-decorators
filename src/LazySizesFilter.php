@@ -23,6 +23,7 @@ final class LazySizesFilter extends TextDecorator
 
     /**
      * @param  string  $text
+     *
      * @return string
      */
     public function processLazyloadImg(string $text): string
@@ -46,6 +47,7 @@ final class LazySizesFilter extends TextDecorator
      * @param  string  $url
      * @param  string  $src
      * @param  string  $quote
+     *
      * @return string
      */
     public function prepareImg(string $fullTag, string $src, string $url, string $quote = '"'): string
@@ -59,6 +61,7 @@ final class LazySizesFilter extends TextDecorator
 
     /**
      * @param  string  $fullTag
+     *
      * @return bool
      */
     public function isLazyloadClass(string $fullTag): bool
@@ -78,6 +81,7 @@ final class LazySizesFilter extends TextDecorator
 
     /**
      * @param  string  $param
+     *
      * @return LazySizesFilter
      */
     public function setClass(string $param = 'lazyload'): LazySizesFilter

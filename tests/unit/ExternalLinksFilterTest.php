@@ -404,8 +404,9 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @return void
      * @throws ReflectionException
+     *
+     * @return void
      */
     public function testSetExcludedHosts(): void
     {
@@ -435,8 +436,9 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @return void
      * @throws ReflectionException
+     *
+     * @return void
      */
     public function testSetRel(): void
     {
@@ -466,8 +468,9 @@ class ExternalLinksFilterTest extends Unit
     }
 
     /**
-     * @return void
      * @throws ReflectionException
+     *
+     * @return void
      */
     public function testSetTarget(): void
     {

@@ -46,6 +46,7 @@ final class ExternalLinksFilter extends TextDecorator
 
     /**
      * @param  string  $text
+     *
      * @return string
      */
     public function closeExternalLinks(string $text): string
@@ -69,6 +70,7 @@ final class ExternalLinksFilter extends TextDecorator
      * @param  string  $url
      * @param  string  $href
      * @param  string  $quote
+     *
      * @return string
      */
     public function prepareLink(string $fullTag, string $href, string $url, string $quote = '"'): string
@@ -86,6 +88,7 @@ final class ExternalLinksFilter extends TextDecorator
      * @param  string  $fullTag
      * @param  string  $href
      * @param  string  $quote
+     *
      * @return string
      */
     public function prepareAttr(string $attrName, string $fullTag, string $href, string $quote = '"'): string
@@ -113,6 +116,7 @@ final class ExternalLinksFilter extends TextDecorator
      * @param  string  $attrName
      * @param  string  $attrParams
      * @param  string  $quote
+     *
      * @return string
      */
     public function getAttr(string $attrName, string $attrParams = '', string $quote = '"'): string
@@ -130,6 +134,7 @@ final class ExternalLinksFilter extends TextDecorator
     /**
      * @param  string  $attrParams
      * @param  string  $quote
+     *
      * @return string
      */
     public function getRel(string $attrParams = '', string $quote = '"'): string
@@ -150,6 +155,7 @@ final class ExternalLinksFilter extends TextDecorator
     /**
      * @param  string  $attrParams
      * @param  string  $quote
+     *
      * @return string
      */
     public function getTarget(string $attrParams = '', string $quote = '"'): string
@@ -165,6 +171,7 @@ final class ExternalLinksFilter extends TextDecorator
 
     /**
      * @param  string  $url
+     *
      * @return bool
      */
     public function isExternalLink(string $url): bool
@@ -177,6 +184,7 @@ final class ExternalLinksFilter extends TextDecorator
 
     /**
      * @param  string[]  $optionsExcludedHosts
+     *
      * @return ExternalLinksFilter
      */
     public function setExcludedHosts(array $optionsExcludedHosts = []): ExternalLinksFilter
@@ -188,6 +196,7 @@ final class ExternalLinksFilter extends TextDecorator
 
     /**
      * @param  string[]  $param
+     *
      * @return ExternalLinksFilter
      */
     public function setRel(array $param = ['nofollow', 'noreferrer']): ExternalLinksFilter
@@ -199,6 +208,7 @@ final class ExternalLinksFilter extends TextDecorator
 
     /**
      * @param  string  $param
+     *
      * @return ExternalLinksFilter
      */
     public function setTarget(string $param = '_blank'): ExternalLinksFilter

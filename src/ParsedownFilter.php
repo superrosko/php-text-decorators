@@ -32,6 +32,7 @@ final class ParsedownFilter extends TextDecorator
 
     /**
      * @param  bool  $param
+     *
      * @return $this
      */
     public function setBreaksEnabled(bool $param): ParsedownFilter
@@ -43,6 +44,7 @@ final class ParsedownFilter extends TextDecorator
 
     /**
      * @param  bool  $param
+     *
      * @return $this
      */
     public function setMarkupEscaped(bool $param): ParsedownFilter
@@ -54,6 +56,7 @@ final class ParsedownFilter extends TextDecorator
 
     /**
      * @param  bool  $param
+     *
      * @return $this
      */
     public function setSafeMode(bool $param): ParsedownFilter
@@ -65,6 +68,7 @@ final class ParsedownFilter extends TextDecorator
 
     /**
      * @param  bool  $param
+     *
      * @return $this
      */
     public function setUrlsLinked(bool $param): ParsedownFilter
