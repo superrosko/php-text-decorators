@@ -30,8 +30,8 @@
         "codeception/codeception": "^4.1",
         "codeception/module-asserts": "^1.3",
         "erusev/parsedown-extra": "^0.8.1",
-        "friendsofphp/php-cs-fixer": "^2.17",
         "fakerphp/faker": "^1.12",
+        "friendsofphp/php-cs-fixer": "^2.17",
         "psalm/plugin-phpunit": "^0.14",
         "vimeo/psalm": "^4.3.1"
     },
@@ -41,8 +41,8 @@
         }
     },
     "scripts": {
-        "check-style": "php-cs-fixer fix --dry-run --diff",
-        "fix-style": "php-cs-fixer fix",
+        "check-style": "set PHP_CS_FIXER_IGNORE_ENV=1 && php-cs-fixer fix --dry-run --diff",
+        "fix-style": "set PHP_CS_FIXER_IGNORE_ENV=1 && php-cs-fixer fix",
         "static-analysis": "psalm --shepherd --stats",
         "test": "codecept run",
         "coverage-html": "codecept run --coverage --coverage-html",

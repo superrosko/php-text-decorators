@@ -155,6 +155,8 @@ return PhpCsFixer\Config::create()
         'whitespace_after_comma_in_array' => true,
         'declare_strict_types' => true,
         'yoda_style' => true,
+        'phpdoc_order' => true,
+        'phpdoc_separation' => true,
     ])
     ->setRiskyAllowed(true);
 
